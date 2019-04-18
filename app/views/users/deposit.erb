@@ -1,0 +1,6 @@
+<h1>Deposit Form</h1>
+
+<%= form_for @user, :url => "/deposit/#{@user.id}" do |f| %>
+Deposit Amount: $<%= f.number_field :dollars %>
+<%= f.submit "Submit" %>
+<%end%>

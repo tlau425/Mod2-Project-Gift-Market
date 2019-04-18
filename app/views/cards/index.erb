@@ -1,0 +1,38 @@
+Current User: <%=current_user.user_name %><br>
+Current Balance: $<%=current_user.dollars %><br>
+<button><%= link_to "Recent Transactions", transactions_path %></button>
+<button><%=link_to "Deposit", "/deposit/#{current_user.id}" %></button>
+<button><%= link_to "My Profile", user_path(current_user) %></button>
+<h1>All cards</h1>
+<% if flash[:notice] %>
+ <p><%=flash[:notice] %>
+   <%end%>
+<h4>Shopping Cart: </h4>
+  <ol>
+    <% @total_price = 0 %>
+    <% @cart_items.each do |card| %>
+    <li> <%= card.name %> - $<%=card.price%>
+        <%=button_to "Remove Card", "/cart", {method: :delete, params: {id: card.id}}%>
+        <% @total_price += card.price %>
+    </li>
+    <% end %><br>
+
+
+    <% if session[:cart].any? %>
+    Cart Total: $<%= @total_price %>
+    <button><%= link_to "Checkout Items", "/checkout" %></button>
+    <%end %>
+    </ol>
+
+<h5>All Cards On The Market </h5>
+<ol> <% @cards.each do |card| %>
+<li>Card Name:<%=link_to card.name, card_path(card.id) %><br>
+  Value:$<%=card.value%><br>
+  Cost:$<%=card.price%><br>
+  Savings:$<%= card.value - card.price %><br>
+  Seller: <%=link_to card.company.company_name, company_path(card.company_id) %>
+  <%= button_to "Add to Shopping Cart", "/cart", {method: :patch, params: {id: card.id}}%>
+</li><br>
+<% end %> <br>
+</ol>
+<%= button_to 'Logout', logout_path, method: :delete %>

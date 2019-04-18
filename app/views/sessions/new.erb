@@ -1,0 +1,16 @@
+<h1>Login</h1>
+
+<h4><%= flash[:notice] %></h4>
+
+<!-- form will POST to '/login' -->
+<%= form_tag(login_path) do %>
+  <%= label_tag :user_name %>
+  <%= text_field_tag :user_name %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+
+  <%= submit_tag 'Login' %>
+<% end %><br><br><br>
+
+<button><%= link_to "Register New User", register_path %> </button>

@@ -1,0 +1,11 @@
+<h1>Transaction show page</h1>
+<ol>
+<% @cart_items.each do |card| %><br>
+<li>Card Name: <%= card.name %><br>
+Price: $<%=card.price %><br>
+<% @total_price += card.price %>
+Seller: <%=card.company.company_name %></li><br><br>
+<%end%>
+</ol>
+
+Total: <%= @total_price %>

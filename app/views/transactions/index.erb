@@ -1,0 +1,17 @@
+<h1>All transactions</h1>
+User$<%=current_user.dollars %><br>
+<ol>
+<% @transactions.each do |order| %>
+
+<li>
+Transaction date: <%=order.created_at.strftime("%m-%d-%Y")%><br>
+Buyer:<%= order.user.user_name %><br>
+<%@card = Card.find(order.card_id)%>
+
+Seller:<%= Company.find(@card.company_id).company_name %><br>
+Giftcard <%= @card.name %> <br>
+</li>
+<% end %>
+</ol>
+
+<button><%= link_to "Main Page", cards_path %> </button>

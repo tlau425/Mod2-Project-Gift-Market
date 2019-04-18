@@ -1,0 +1,9 @@
+<h1>User Show</h1>
+<p> Display Name: <%= @user.user_name %><br>
+    Dollars: <%= @user.dollars %><br>
+
+
+</p>
+<button><%= link_to "Edit", "/users/#{@user.id}/edit" %></button><br>
+<%= button_to "Delete Account", user_path(@user), method: "delete", data:{confirm:'Are You Sure?'} %>
+<button><%= link_to "Back", cards_path %></button>
