@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_04_17_135100) do
     t.integer "price"
     t.integer "category_id"
     t.integer "company_id"
+    t.string "picture", default: "https://trefamiglia.com/wp-content/uploads/2017/12/gcc.png"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -47,6 +48,8 @@ ActiveRecord::Schema.define(version: 2019_04_17_135100) do
     t.string "user_name"
     t.string "password_digest"
     t.integer "dollars", default: 0
+    t.integer "savings", default: 0
+    t.integer "spendings", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

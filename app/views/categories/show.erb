@@ -1,3 +1,7 @@
-<h1>Category</h1>
-<p> <%= @category.name %><br>
-</p>
+<h1><%= @category.name %></h1><br>
+    <%= @category.cards.each do |card|%>
+    Gift Card:<%= card.name %><br>
+    Price: <%= card.price %><br>
+    Value: <%= card.value %><br>
+    Seller: <%= Company.find(card.company_id).company_name %><br><br>
+    <%end%>

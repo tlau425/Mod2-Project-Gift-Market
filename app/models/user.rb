@@ -7,9 +7,12 @@ class User < ApplicationRecord
 
   def buy_card(card)
     if self.dollars >= card.price
+      difference = card.value - card.price
       new_balance = self.dollars - card.price
       company_balance = card.company.dollars + card.price
-      self.update(dollars: new_balance)
+      savings_balance = self.savings + difference
+      spendings_balance = self.spendings + card.price
+      self.update(dollars: new_balance, savings: savings_balance, spendings: spendings_balance)
       card.company.update(dollars: company_balance)
     # else
     #   flash[:notice] = "You do not have enough in your balance."

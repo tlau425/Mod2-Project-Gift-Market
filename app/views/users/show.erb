@@ -1,7 +1,8 @@
-<h1>User Show</h1>
+<h1>My Profile</h1>
 <p> Display Name: <%= @user.user_name %><br>
-    Dollars: <%= @user.dollars %><br>
-
+    Current Balance: <%= @user.dollars %><br>
+    Total Spent: <%= @user.spendings %><br>
+    Total Savings: <%= @user.savings %><br>
 
 </p>
 <button><%= link_to "Edit", "/users/#{@user.id}/edit" %></button><br>

@@ -7,6 +7,7 @@ class CardsController < ApplicationController
     @cards = Card.all
     show_the_cart
     current_user
+    @transactions = Transaction.all
   end
 
   def new
