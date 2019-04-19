@@ -4,6 +4,7 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :company_name
       t.text :company_desc
       t.integer :dollars
+      t.string :picture
       t.timestamps
     end
   end

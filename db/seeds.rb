@@ -6,21 +6,16 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-tommy = User.create({user_name: 'Tommy', password_digest: 'ayoo'})
-jon = User.create({user_name: 'Jon', password_digest: 'hello'})
-tony = User.create({user_name: 'Tony', password_digest: 'mypassword'})
-hello = User.create({user_name: 'Hello', password_digest: '123'})
 
+costco = Company.create({company_name: 'Costco', company_desc: "Always Low Prices", dollars: 250000, picture: "https://mobilecontent.costco.com/live/resource/img/static-roadshow/special-events-schedule.jpg"})
+amazon = Company.create({company_name: 'Amazon', company_desc: "Jeff Bezo", dollars: 4000000, picture: "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2016/02/AMAZON-1200x537.png"})
+slickdeals = Company.create({company_name: 'Slickdeals', company_desc: "Deals on deals", dollars: 5000000, picture: "https://static.slickdealscdn.com/images/sd_share_logo.png?7845"})
+ebay = Company.create({company_name: 'Ebay', company_desc: "Users market", dollars: 5000, picture: "https://cdn2.downdetector.com/static/uploads/logo/ebay-logo.png"})
+rakuten = Company.create({company_name: 'Rakuten', company_desc: "Sneaks", dollars: 987400, picture: "https://www.ecomclips.com/wp-content/uploads/%5E8A7D51A633E2E80F14F64E561955EA27BAA8CE7EC801E536BF%5Epimgpsh_fullsize_distr.jpg"})
 
-costco = Company.create({company_name: 'Costco', company_desc: "Always Low Prices", dollars: 250000})
-amazon = Company.create({company_name: 'Amazon', company_desc: "Jeff Bezo", dollars: 4000000})
-slickdeals = Company.create({company_name: 'Slickdeals', company_desc: "Deals on deals", dollars: 5000000})
-ebay = Company.create({company_name: 'Ebay', company_desc: "Users market", dollars: 5000})
-rakuten = Company.create({company_name: 'Rakuten', company_desc: "Sneaks", dollars: 987400})
-
-
+rarecard = Card.create({name: "Rare Card", value: 50, price: 1000, category_id: 8, company_id: 1})
 applebees = Card.create({name: 'Apple Bees', value: 500, price: 400, category_id: 1, company_id: 1, picture: "https://dl52d2tabxpgo.cloudfront.net/001/003/991/m.jpg"})
-target = Card.create({name: 'target', value: 400, price: 250, category_id: 1, company_id: 1, picture: "https://www.svmcards.com/wp-content/uploads/2018/03/Target-1.png"})
+target = Card.create({name: 'Target', value: 400, price: 250, category_id: 1, company_id: 1, picture: "https://www.svmcards.com/wp-content/uploads/2018/03/Target-1.png"})
 toyrus = Card.create({name: 'Toys R Us', value: 275, price: 200, category_id: 8, company_id: 2, picture: "https://advancelocal-adapter-image-uploads.s3.amazonaws.com/image.al.com/home/bama-media/width600/img/news_impact/photo/gift-cardjpg-94069e7909b841d7.jpg"})
 chipotle = Card.create({name: 'Chipotle', value: 250, price: 249, category_id: 3, company_id: 3, picture: "https://static.slickdealscdn.com/attachment/1/0/8/7/3/5/9/7974586.attach"})
 starbucks = Card.create({name: 'Starbucks', value: 50, price: 10, category_id: 3, company_id: 3, picture: "https://www.dlyted.com/media/cards/starbucks-214.png"})
@@ -34,6 +29,7 @@ regal = Card.create({name: 'UA Regal', value: 60, price: 40, category_id: 8, com
 dunkindonut = Card.create({name: 'Dunkin Donut', value: 50, price: 25, category_id: 3, company_id: 2, picture: "https://gracefulcoffee.files.wordpress.com/2017/12/dunkindonuts.jpg?w=560"})
 chilis = Card.create({name: "Chili's", value: 75, price: 25, category_id: 3, company_id: 5, picture: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Chili%27s_Logo.svg/2000px-Chili%27s_Logo.svg.png" })
 footlocker = Card.create({name: "Footlocker", value: 200, price: 150, category_id: 1, company_id: 2, picture: "https://images.footlocker.com/pi/GCARD21J/zoom/GCARD21J.jpeg"})
+
 
 
 clothing = Category.create({name: 'Clothing'})

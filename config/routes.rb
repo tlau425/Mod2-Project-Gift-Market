@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   patch '/categories/:id', to: 'categories#update'
 
   get '/cards', to: 'cards#index'
-  get '/cards/:id', to: 'cards#show', as: 'card'
   get '/cards/new', to: 'cards#new'
+  get '/cards/:id', to: 'cards#show', as: 'card'
   post '/cards', to: 'cards#create'
   get '/cards/:id/edit', to: 'cards#edit'
   patch '/cards/:id', to: 'cards#update'

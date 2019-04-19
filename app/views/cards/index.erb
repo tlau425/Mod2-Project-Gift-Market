@@ -165,7 +165,7 @@
   <body>
     <nav class="navbar navbar-default navbar-expand-lg navbar-light">
       <div class="navbar-header d-flex col">
-        <a class="navbar-brand" href="#">Gift<b>Exchange</b>
+        <a class="navbar-brand" href="#">Gift<b>Market</b>
         </a>
         <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
           <span class="navbar-toggler-icon"></span>
@@ -180,9 +180,13 @@
           <li class="nav-item"><%= link_to "My Profile", user_path(current_user), class: "nav-link"%></li>
           <li class="nav-item"><%= link_to "Recent Transactions", transactions_path, class: "nav-link"%></li>
           <li class="nav-item"><%=link_to "Deposit", "/deposit/#{current_user.id}", class: "nav-link"%></li>
+
         </ul>
         <div class="navbar-form form-inline navbar-right ml-auto">
           <div class="input-group search-box">
+            Logged in as: <%=current_user.user_name%><br>
+            Current Balance: $<%= current_user.dollars %><br>
+
             <span class="input-group-btn">
               <span class="btn btn-info" style="cursor:pointer" onclick="openNav()">VIEW CART</span>
             </span>
@@ -230,6 +234,9 @@
               <% if session[:cart].any? %>
                 Cart Total: $<%= @total_price %>
                 <%= link_to "Checkout Items", "/checkout", class: "btn btn-info" %>
+                <% if flash[:notice] %>
+                <%= flash[:notice]%>
+                <%end%>
               <%end %>
             </div>
             <div></div>

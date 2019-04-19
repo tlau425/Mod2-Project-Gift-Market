@@ -15,11 +15,12 @@ class CardsController < ApplicationController
   end
 
   def create
+    byebug
     @card = Card.create(card_params)
     if @card.valid?
       redirect_to card_path(@card)
     else flash[:errors] = @card.errors.full_messages
-      redirect_to new_card_path
+      redirect_to cards_new_path
     end
   end
 
@@ -46,7 +47,7 @@ class CardsController < ApplicationController
   end
 
   def card_params
-    params.require(:card).permit(:name, :value, :price, :category_id, :user_id)
+    params.require(:card).permit(:name, :value, :price, :category_id, :company_id, :user_id)
   end
 
   def get_categories
